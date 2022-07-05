@@ -1,0 +1,14 @@
+<div class="container">
+  <h2><%= @experience.name %></h2>
+  <p><%= @experience.address %></p>
+  <br>
+  <div>
+    <%= link_to "Delete",
+    experience_path(@experience),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+    <%= link_to "Edit",
+    edit_experience_path(@experience)
+    %>
+  </div>
+</div>
