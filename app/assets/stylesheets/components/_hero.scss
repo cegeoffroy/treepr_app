@@ -1,0 +1,78 @@
+.bg-hero {
+    padding-top: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2),
+                       rgba(0, 0, 0, 0.2)), asset-url('treepr_cover.jpg');
+    background-position: center;
+    background-size: cover;
+    background-color: $white;
+    height: 95vh;
+    opacity: 1;
+    min-height: 500px;
+  }
+
+.hero-title {
+  padding-top: 50px;
+  font-size: 4.8rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  h1 {
+    color: $white;
+  }
+}
+
+.hero-text {
+  color: $white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.hero-host {
+  padding: 24px;
+}
+
+@media (min-width: 576px) {
+  .bg-hero {
+    position: relative;
+  }
+
+  .hero-title {
+    padding-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .hero-text {
+    padding: 15px 15px;
+  }
+
+  .hero-host {
+  padding-left: 80px;
+}
+
+}
+
+@media (min-width: 992px) {
+
+  .hero-title {
+    padding-top: 100px;
+    h1 {
+      color: $white;
+    }
+  }
+
+  .hero-text {
+    color: $white;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    font-size: 22px;
+    font-weight: 300;
+    max-width: 650px;
+  }
+
+  .hero-box {
+    display: block;
+    background-color: $white;
+    width: 600px;
+    height: 400px;
+    padding: 25px;
+    border-radius: 4px;
+  }
+}
