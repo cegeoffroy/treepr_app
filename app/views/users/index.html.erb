@@ -5,3 +5,11 @@
   <% end %>
 </ul>
 </div>
+
+<div class="container">
+  <ul>
+  <% @experiences.each do |experience| %>
+    <li><%= link_to experience.name, experience_path(experience) %></li>
+  <% end %>
+</ul>
+</div>

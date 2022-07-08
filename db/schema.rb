@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_07_232424) do
 
   create_table "experiences", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "listing_type"
     t.string "address"
     t.text "description"
     t.integer "max_ppl"
