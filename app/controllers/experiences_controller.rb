@@ -1,9 +1,11 @@
 class ExperiencesController < ApplicationController
-  before_action :set_experience, only: [:show, :edit, :update, :destroy]
+  before_action :set_experience, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:show]
 
   def index
-    @experiences = Experience.all
+    @accommodations = current_user.accommodations
   end
+
 
   def show
   end
@@ -14,9 +16,14 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new(experience_params)
-    @experience.save
+    @experience.user = current_user
+    if @experience.valid?
+      @experience.save
+      redirect_to experience_path(@experience)
+    else
+      render :new, notice: "Oops, something went wrong while saving your experience."
+    end
 
-    redirect_to experience_path(@experience)
   end
 
   def edit
@@ -34,10 +41,20 @@ class ExperiencesController < ApplicationController
     redirect_to experiences_path, status: :see_other
   end
 
+  def overview
+  end
+
+  def listing
+  end
+
+  def amenities
+  end
+
+
   private
 
   def experience_params
-    params.require(:experience).permit(:name, :address)
+    params.require(:experience).permit(:name, :address, :listing_type, :website, :description)
   end
 
   def set_experience

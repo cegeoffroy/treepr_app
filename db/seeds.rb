@@ -23,12 +23,14 @@ puts 'Creating experiences...'
 
 accommodation_attributes = [
   {
+    user: admin,
     name: "House in the trees",
     listing_type: "Glamping",
     address: "12, lancashire road",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse libero eros, ultrices non aliquet ac, molestie in ex. Etiam posuere placerat risus non ultricies. Nam pharetra neque sit amet bibendum porttitor. Proin sit amet leo et est pulvinar volutpat ac ac urna. Suspendisse tincidunt mi purus, a ultrices eros lobortis at. Mauris lobortis nisl diam, sit amet congue turpis eleifend non. Vivamus id mattis velit."
   },
   {
+    user: admin,
     name: "Indiana rivers",
     listing_type: "Rafting",
     address: "1, bob street",
