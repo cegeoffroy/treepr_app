@@ -1,18 +1,30 @@
-.navbar-lewagon {
+.navbar-treepr {
   justify-content: space-between;
-  background: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: $white;
+  color: $green;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-treepr .navbar-collapse {
   flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
 }
 
 .navbar-brand {
   font-size: 32px;
   font-weight: 700;
   color: $green !important
+}
+
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.right-top-navbar {
+  display: flex;
+  align-items: center;
+  margin: 5px;
 }
