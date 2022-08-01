@@ -1,13 +1,14 @@
-<!-- <div class="navbar navbar-light navbar-treepr">
+<div class="navbar navbar-expand-sm navbar-light navbar-treepr">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
       Treepr<span style="color: #E67E22">.</span>
     <% end %>
 
-    <form class="form-inline">
+    <div class="form-inline">
+
+      <%= link_to "Host", host_path, class: "btn btn-ghost" %>
       <ul class="navbar-nav mr-auto desktop">
         <li class="nav-item mx-2">
-          <%= link_to "Host", host_path, class: "btn btn-ghost" %>
         </li>
         <% if !user_signed_in? %>
             <li class="nav-item mx-2">
@@ -17,7 +18,7 @@
               <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
             </li>
         <% else %>
-          <li class="nav-item dropdown">
+          <li class="dropdown bl-orange">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
             </a>
@@ -53,40 +54,7 @@
         <% end %>
       </ul>
 
-    </form>
+    </div>
 
   </div>
 </div>
- -->
- <nav class="navbar navbar-expand-lg navbar-light navbar-treepr">
-
-  <a class="navbar-brand" href="/">Treepr<span style="color: #E67E22">.</span></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto d-flex align-items-center">
-      <li class="nav-item mx-2">
-        <a class="btn btn-ghost ml-2" href="/host"><strong>Host</strong></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa-solid fa-campground"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">My adventures</a>
-          <a class="dropdown-item" href="#">Inbox</a>
-          <a class="dropdown-item" href="#">Account</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/admin">Admin dashboard</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/admin">FAQs & Help</a>
-          <a class="dropdown-item" href="/admin">Log out</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-</nav>
