@@ -10,6 +10,5 @@ Rails.application.routes.draw do
 
   # Pages
   get 'host', to: 'pages#host'
-  get 'admin', to: 'pages#admin'
 
 end
