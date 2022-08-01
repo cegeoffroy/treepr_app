@@ -16,3 +16,10 @@
   font-weight: 700;
   color: $green !important
 }
+
+
+@media (min-width: 992px) {
+  .dropdown-menu {
+    right: 0;
+  }
+}
