@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <h1>Register your experience</h1>
+    <br>
+    <div class="col-xs-12 col-md-6">
+      <%= simple_form_for @experience do |f| %>
+        <div class="row">
+
+          <div class="col-xs-12 col-md-6">
+            <div class="form-group">
+              <div>
+                <%= f.input :exp_type, collection: [["Glamping", "Glamping"],["Bring Your Own tent", "Bring Your Own tent"],["Campsite", "Campsite"], ["RV Park", "RV Park"], ["Camping", "Camping"]], placeholder: 'Experiences', label: "Experience type", class: "form-control" %>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label>Your experience name</label>
+          <%= f.text_field :name, label: "Experience Name", autocomplete: 'off', class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.input :address, placeholder: "Enter your precise address", hint: "Campers will only get your exact address once they’ve booked a reservation.", class: "form-control" %>
+        </div>
+        <br>
+
+        <br>
+        <div class="container text-center">
+            <%= f.button :submit,"Host Now", class: "btn btn-ghost" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

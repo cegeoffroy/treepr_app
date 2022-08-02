@@ -1,0 +1,26 @@
+<div class="container">
+  <h1><strong>My Listings<span style="color: #E67E22">.</span></strong></h1>
+  <br>
+    <% if @experiences.any? %>
+        <% @experiences.each do |experience| %>
+          <div class="notification">
+            <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+            <div class="notification-content">
+              <p><%= experience.name %></p>
+              <p><small><%= experience.address %></small></p>
+            </div>
+
+            <div class="notification-actions">
+              <a href="<%= experience_path(experience) %>">Show <i class="fa-solid fa-eye"></i></a>
+              <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+              <a data-turbo-method="delete" data-turbo-confirm="Are you sure?" href="<%= experience_path(experience) %>">Delete <i class="far fa-trash-alt"></i></a>
+            </div>
+          </div>
+          <br>
+
+        <% end %>
+      <% else %>
+      <p>No activity listed</p>
+    <% end %>
+
+</div>
