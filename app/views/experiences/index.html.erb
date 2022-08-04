@@ -11,9 +11,11 @@
             </div>
 
             <div class="notification-actions">
-              <a href="<%= experience_path(experience) %>">Show <i class="fa-solid fa-eye"></i></a>
+              <a href="<%= overview_experience_path(experience) %>">Show <i class="fa-solid fa-eye"></i></a>
               <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-              <a data-turbo-method="delete" data-turbo-confirm="Are you sure?" href="<%= experience_path(experience) %>">Delete <i class="far fa-trash-alt"></i></a>
+              <%= button_to experience_path(experience) do %>
+                <p>Delete <i class="far fa-trash-alt"></i></p>
+              <% end -%>
             </div>
           </div>
           <br>

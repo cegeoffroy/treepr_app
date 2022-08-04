@@ -17,7 +17,7 @@ class ExperiencesController < ApplicationController
     @experience.user = current_user
     if @experience.valid?
       @experience.save
-      redirect_to experience_path(@experience), notice: "New experience created !"
+      redirect_to description_experience_path(@experience), notice: "New experience created !"
     else
       render :new, notice: "Oops, something went wrong while creating your experience."
     end
@@ -43,6 +43,22 @@ class ExperiencesController < ApplicationController
     redirect_to experiences_path, status: :see_other
 
   end
+
+  def overview
+  end
+
+  def listing
+  end
+
+  def description
+  end
+
+  def pricing
+  end
+
+  def photo_upload
+  end
+
 
   private
 

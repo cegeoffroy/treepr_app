@@ -1,0 +1,54 @@
+<div class="container-fluid content">
+  <div class="row">
+    <div class="col-2">
+      <%= render "shared/sidenavexperience" %>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <h1>Your experience</h1>
+      <br>
+
+      <%= simple_form_for @experience do |f| %>
+        <div class="row">
+
+          <div class="col-xs-12 col-md-6">
+            <div class="form-group">
+              <div>
+                <%= f.input :exp_type, collection: [["Glamping", "Glamping"],["Bring Your Own tent", "Bring Your Own tent"],["Campsite", "Campsite"], ["RV Park", "RV Park"], ["Camping", "Camping"]], placeholder: 'Experiences', label: "Experience type", class: "form-control" %>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row setup-body">
+          <div class="col-xs-12 w-100">
+            <div class="form-group">
+              <%= f.input :description, as: :text, label: "Describe with your own words the kind of experience you would like to offer with your stay.", hint: "maximum 1000 characters", class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-xs-12 col-md-6">
+            <div class="form-group">
+                <%= f.input :website, label: "Where can we find you online", placeholder: "http://mywebsite.co.uk", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-md-6">
+            <div class="form-group">
+                <%= f.input :exp_phone, label: "Where can we contact you", placeholder: "+44 123456789", class: "form-control" %>
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <div class="d-flex justify-content-between">
+          <strong><%= link_to '< Back', :back, class: "back" %></strong>
+          <%= f.submit "Save", class: "btn btn-flat" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

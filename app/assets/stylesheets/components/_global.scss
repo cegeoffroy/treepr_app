@@ -8,6 +8,19 @@ a {
   text-decoration: none;
 }
 
+.text-orange {
+  color: $orange;
+}
+
+.desktop {
+  display: none;
+}
+
 @media (min-width: 576px) {
+
+.content {
+  padding-top: 100px;
+  min-height: 80vh;
+}
 
 }

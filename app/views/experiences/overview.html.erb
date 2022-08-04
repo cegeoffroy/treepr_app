@@ -1,0 +1,69 @@
+<div class="container content">
+  <div class="row d-flex justify-content-center p-3">
+    <div class="col-xs-12 w-100">
+
+      <div class="d-flex justify-content-between">
+        <h3><strong>Overview<span style="color: #E67E22">.</span></strong></h3>
+      </div>
+      <br>
+      <div class="d-flex justify-content-between sidebar-list overview-title">
+        <h4><%= @experience.name %> </h4>
+        <div>
+          <% if @experience.status == "Draft"%>
+            <span class="badge badge-pill badge-primary"><%= @experience.status %></span>
+          <% elsif @experience.status == "Pending" %>
+            <span class="badge badge-pill badge-warning"><%= @experience.status %></span>
+          <% elsif @experience.status == "Approved" %>
+            <span class="badge badge-pill badge-success"><%= @experience.status %></span>
+          <% elsif @experience.status == "Rejected" %>
+            <span class="badge badge-pill badge-danger"><%= @experience.status %></span>
+          <% end %>
+        </div>
+      </div>
+      <br>
+      <ul class="setup-overview">
+        <li class="sidebar-item">
+            <span class="float-right text-babu"><i class="fa-solid fa-circle-check"></i></span>
+            <%= link_to "Listing", listing_experience_path, class: "sidebar-link active" %>
+        </li>
+        <hr>
+        <li class="sidebar-item">
+          <% if !@experience.description.blank? %>
+            <i class="fa-solid fa-circle-check"></i>
+          <% else %>
+            <i class="fa-solid fa-circle-notch"></i>
+          <% end %>
+          <%= link_to "Description", description_experience_path, class: "sidebar-link active" %>
+        </li>
+        <hr>
+        <li class="sidebar-item">
+          <% if !@experience.price.blank? %>
+            <i class="fa-solid fa-circle-check"></i>
+          <% else %>
+            <i class="fa-solid fa-circle-notch"></i>
+          <% end %>
+          <%= link_to "Pricing", pricing_experience_path, class: "sidebar-link active" %>
+        </li>
+        <hr>
+      </ul>
+      <br>
+      <hr>
+      <div class="d-flex justify-content-between sidebar-list">
+        <strong><%= link_to '< Back', :back, class: "back" %></strong>
+        <div class="text-center">
+          <% is_ready = !@experience.description.blank? && !@experience.price.blank? && !@experience.address.blank? %>
+          <% if @experience.status == "Draft" %>
+            <%= form_for @experience do |f| %>
+              <%= f.hidden_field :status, { value: :Pending} %>
+              <%= f.submit "Publish", id: "publish_button", class: "btn btn-normal", disabled: !is_ready %>
+            <% end %>
+          <% elsif @experience.status == "Pending" %>
+            <div class="btn btn-ghost btn-block">Under Review</div>
+          <% end %>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
