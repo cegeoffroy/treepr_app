@@ -4,6 +4,14 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :experiences
+  resources :experiences do
+    member do
+      get 'overview'
+      get 'listing'
+      get 'pricing'
+      get 'description'
+      get 'photo_upload'
+    end
+  end
 
 end
