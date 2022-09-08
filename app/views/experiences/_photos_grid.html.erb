@@ -1,0 +1,44 @@
+<div class="container-grid-photos">
+
+
+<div class="grid product">
+  <div class="product-gallery">
+    <div class="row">
+      <div class="col-md-8 p-0">
+        <div class="product-image">
+          <%= cl_image_tag(experience.photos[0].key, {class: "active"}) %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="photos-grid image-list">
+          <% @experience.photos.each do |photo| %>
+          <% if !photo.nil? %>
+            <div class="image-item">
+              <%= cl_image_tag photo.key %>
+            </div>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  const activeImage = document.querySelector(".product-image .active");
+  const productImages = document.querySelectorAll(".image-list img");
+  const navItem = document.querySelector('a.toggle-nav');
+
+  function changeImage(e) {
+    activeImage.src = e.target.src;
+  }
+
+  function toggleNavigation(){
+    this.nextElementSibling.classList.toggle('active');
+  }
+
+  productImages.forEach(image => image.addEventListener("click", changeImage));
+  navItem.addEventListener('click', toggleNavigation);
+
+</script>
