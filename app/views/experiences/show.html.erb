@@ -1,6 +1,14 @@
 <div class="container">
-  <%= link_to '< Back', :back, class: "back" %>
-  <br>
-  <h1><%= @experience.name %></h1>
-  <p><%= @experience.address %></p>
+  <div class="row">
+    <div class="col-12">
+      <%= render 'photos_grid', experience: @experience %>
+    </div>
+
+    <br>
+
+    <div class="col-12">
+      <h1><%= @experience.name %></h1>
+      <p><%= @experience.address %></p>
+    </div>
+  </div>
 </div>

@@ -56,7 +56,7 @@ class ExperiencesController < ApplicationController
   def pricing
   end
 
-  def photo_upload
+  def photos_upload
   end
 
 
@@ -74,6 +74,7 @@ class ExperiencesController < ApplicationController
                                         :website,
                                         :exp_phone,
                                         :max_capacity,
-                                        :status)
+                                        :status,
+                                        photos: [])
   end
 end
