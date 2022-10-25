@@ -75,6 +75,8 @@ class ExperiencesController < ApplicationController
                                         :exp_phone,
                                         :max_capacity,
                                         :status,
+                                        :latitude,
+                                        :longitude,
                                         photos: [])
   end
 end
