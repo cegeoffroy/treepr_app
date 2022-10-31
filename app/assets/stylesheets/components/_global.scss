@@ -16,11 +16,22 @@ a {
   display: none;
 }
 
+.center {
+  text-align: center;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0px;
+}
+
 @media (min-width: 576px) {
 
 .content {
-  padding-top: 100px;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0;
   min-height: 80vh;
-}
+  }
 
 }

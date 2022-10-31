@@ -1,0 +1,77 @@
+.show-header {
+  padding-top: 15px;
+}
+
+
+.exp_badge {
+  color: $orange;
+  border: 1px solid $orange;
+  padding: 8px 24px;
+  border-radius: 4px;
+}
+
+.exp-summary {
+  display: block;
+
+}
+
+.box-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,calc(50% - 10px));
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  li {
+    padding: 0 0 10px;
+  }
+}
+
+.list-attributs {
+  list-style: none;
+  display: flex;
+  padding-left: 0px;
+  li{
+    line-height: 22px;
+    border: 1px solid $light-gray;
+    border-radius: 25px;
+    padding: 3px 10px;
+    margin: 4px;
+  }
+}
+
+.tabs-underlined {
+  display: flex;
+  align-items: center;
+}
+
+.tabs-underlined .tab-underlined {
+  color: black;
+  padding: 8px;
+  margin: 8px;
+  opacity: .4;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+.tabs-underlined .tab-underlined.active {
+  opacity: 1;
+  border-bottom: 3px solid $orange;
+}
+
+@media (min-width: 576px) {
+
+
+  .expbox {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+    width: 100%;
+  }
+
+
+
+
+}
