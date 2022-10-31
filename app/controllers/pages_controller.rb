@@ -6,4 +6,8 @@ class PagesController < ApplicationController
 
   def host
   end
+
+  def my_experiences
+    @experiences = current_user.experiences
+  end
 end
