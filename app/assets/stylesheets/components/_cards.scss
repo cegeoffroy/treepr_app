@@ -1,3 +1,53 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}
+
+.card-experience {
+  margin: 5px;
+  overflow: hidden;
+  background: white;
+  border-radius: 10px;
+}
+
+.card-experience:hover {
+  opacity: 0.7;
+}
+
+.card-experience > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-experience h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-experience p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-experience .card-experience-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-experience-infos .card-experience-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
 
 
 @media (min-width: 500px) {
@@ -5,5 +55,8 @@
     background-color: white;
     border-radius: 5px;
     padding: 10px 5px;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr;
   }
 }

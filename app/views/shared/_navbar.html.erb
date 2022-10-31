@@ -4,31 +4,41 @@
       Treepr<span style="color: #E67E22">.</span>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item active">
-          <%= link_to "Host", new_experience_path, class: "btn btn-flat" %>
-        </li>
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Trips", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Inbox", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle test" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa-solid fa-campground"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/experiences">My listings</a>
-              <a class="dropdown-item" href="#">My adventures</a>
+              <a class="dropdown-item" href="#">Whishlist</a>
+              <% if current_user.experiences.any? %>
+                <a class="dropdown-item" href="/my_experiences">My Experiences</a>
+              <% else %>
               <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/my_experiences">Host an Experience</a>
+              <% end -%>
+              <a class="dropdown-item" href="/my_experiences">Account</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Help</a>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item"%>
             </div>
           </li>
         <% else %>
+          <li class="nav-item active">
+            <%= link_to "Host", new_experience_path, class: "btn btn-flat" %>
+          </li>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
