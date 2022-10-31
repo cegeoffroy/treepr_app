@@ -5,9 +5,16 @@ class ExperiencesController < ApplicationController
   end
 
   def index
-    @experiences = Experience.all
+    @experiences = nil
+    if params[:query].present?
+      query_params = params[:query]
+      @experiences = Experience.near(query_params, 1)
+    else
+      @experiences = Experience.all
+    end
       # The `geocoded` scope filters only experiences with coordinates
-      @markers = @experiences.geocoded.map do |experience|
+      @experiences = @experiences.geocoded
+      @markers = @experiences.map do |experience|
         {
           lat: experience.latitude,
           lng: experience.longitude

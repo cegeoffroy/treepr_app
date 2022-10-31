@@ -3,21 +3,30 @@
   <div class="container">
 
     <div class="hero-title">
-      <h1>Live your next outdoor adventure<span style="color: #E67E22">.</span></h1>
+      <h1>Live your next <span style="color: #0E343A">ADVENTURE</span> outdoor<span style="color: #E67E22">.</span></h1>
     </div>
     <div class="hero-text">
       <p>Your next Treepr adventure starts here.<br>
       Discover, book and enjoy unique outdoor activites around you, from glamping to outdoor experiences, </p>
     </div>
     <div class="col-xs-12 w-100">
-      <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
+     <!--  <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
         <div class="search-form-control form-group">
           <input class="form-control string required" type="text" name="search[query]" id="search_query" />
           <button name="button" type="submit" class="btn btn-flat">
             <i class="fas fa-search"></i> Search
           </button>
         </div>
-      </form>
+      </form> -->
+
+      <%= form_with url: experiences_path, method: :get, class: "search-form-control d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find an experience"
+        %>
+        <%= submit_tag "Search", class: "btn btn-flat" %>
+      <% end %>
     </div>
 
   </div>
