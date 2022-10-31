@@ -1,14 +1,189 @@
 <div class="container">
+  <div class="show-header"></div>
   <div class="row">
-<!--     <div class="col-12">
-      ## = render 'photos_grid', experience: @experience %>
-    </div> -->
 
-    <br>
+    <div class="col-12 col-md-4">
 
-    <div class="col-12">
-      <h1><%= @experience.name %></h1>
-      <p><%= @experience.address %></p>
+      <div class="expbox center sticky-top">
+        <img class="avatar-Xlarge" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+        <h2>Hosted by John</h2>
+        <p>Hiking in Faversham</p>
+        <div class="dble-btn">
+          <button class="btn btn-flat">Message experience</button>
+        </div>
+      </div>
+
+      <div class="expbox">
+        <h1>Hours</h1>
+        <div class="dropdown-divider"></div>
+        <br>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">Monday</th>
+              <td>Closed</td>
+            </tr>
+            <tr>
+              <th scope="row">Tuesday</th>
+              <td>9h-18h</td>
+            </tr>
+            <tr>
+              <th scope="row">Wednesday</th>
+              <td>9h-18h</td>
+            </tr>
+            <tr>
+              <th scope="row">Thursday</th>
+              <td>9h-18h</td>
+            </tr>
+            <tr>
+              <th scope="row">Friday</th>
+              <td>9h-18h</td>
+            </tr>
+            <tr>
+              <th scope="row">Saturdat</th>
+              <td>9h-18h</td>
+            </tr>
+            <tr>
+              <th scope="row">Sunday</th>
+              <td>9h-18h</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
     </div>
+    <div class="col-12 col-md-8">
+
+      <div class="expbox">
+        <h1><%= @experience.name %></h1>
+        <div class="dropdown-divider"></div><br>
+        <ul class="box-list">
+          <li><span class="badge-flat-green">Hiking</span></li>
+          <li><i class="fa-solid fa-location-dot" style="margin-right: 10px; color: #E67E22"></i>Kent</li>
+          <li><i class="fa-solid fa-star" style="margin-right: 10px; color: #E67E22"></i>4.9 - 12 reviews</li>
+          <li><i class="fa-solid fa-user-check" style="margin-right: 10px; color: #E67E22"></i>Host verified</li>
+          <li><i class="fa-regular fa-calendar-days" style="margin-right: 10px; color: #E67E22"></i>From Sept to Mar</li>
+          <li></li>
+        </ul>
+
+      </div>
+
+      <!-- Carousel -->
+      <div class="expbox">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Experience details -->
+
+      <nav class="expbox sticky-top">
+        <ul class="list-inline tabs-underlined">
+          <li>
+            <a href="#description" class="tab-underlined active">Description</a>
+          </li>
+          <li>
+            <a href="#features" class="tab-underlined">Features</a>
+          </li>
+          <li>
+            <a href="#pricing" class="tab-underlined">Pricing</a>
+          </li>
+          <li>
+            <a href="#address" class="tab-underlined">Address</a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <div class="expbox">
+        <h1>Featuring</h1>
+        <a class="jumptarget" name="features" id="features"></a>
+        <div class="dropdown-divider"></div><br>
+        <ul class="list-attributs">
+          <li>Farm</li>
+          <li>River</li>
+          <li>Forest</li>
+          <li>test</li>
+        </ul>
+        <br>
+        <h1>Description</h1>
+        <div class="dropdown-divider"></div><br>
+        <a class="jumptarget" name="description" id="description"></a>
+        <p><%= @experience.description %></p>
+      </div>
+
+      <div class="expbox">
+        <h1>Pricing</h1>
+        <a class="jumptarget" name="pricing" id="pricing"></a>
+        <div class="dropdown-divider"></div><br>
+        <p><strong>Individuals</strong></p>
+        <p>
+          Adult: 14£/pers <br>
+          Children: 4£/pers
+        </p>
+        <br>
+        <h1>Payment method</h1>
+        <ul class="list-attributs">
+          <li>Card</li>
+          <li>Cash</li>
+        </ul>
+      </div>
+
+      <div class="expbox">
+        <h1>Address</h1>
+        <a class="jumptarget" name="features" id="features"></a>
+        <div class="dropdown-divider"></div><br>
+        <div class="row">
+          <div class="col-4">
+            <p><strong><%= @experience.name %></strong></p>
+            <p><%= @experience.address %></p>
+          </div>
+          <div class="col-8">
+            map here
+          </div>
+        </div>
+      </div>
+
+      <div class="expbox">
+        <div class="row">
+          <div class="col-6">
+          <h1>Socials</h1>
+          <div class="dropdown-divider"></div><br>
+            <div class="footer-links">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fa-brands fa-airbnb"></i></a>
+            </div>
+          </div>
+          <div class="col-6">
+            <h1>Website</h1>
+            <div class="dropdown-divider"></div><br>
+            <a href="#" class="">https://mywebsite.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
   </div>
 </div>

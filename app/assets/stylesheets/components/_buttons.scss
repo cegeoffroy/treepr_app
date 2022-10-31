@@ -2,7 +2,7 @@
   color: $orange;
   border: 1px solid $orange;
   padding: 8px 24px;
-  border-radius: 50px;
+  border-radius: 10px;
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
@@ -38,4 +38,19 @@
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+}
+
+
+.badge-flat-green {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: $green;
+}
+
+.badge-ghost-orange {
+  color: $orange;
+  border: 1px solid $orange;
+  padding: 8px 24px;
+  border-radius: 10px;
 }
