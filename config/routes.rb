@@ -17,4 +17,7 @@ Rails.application.routes.draw do
 
   get 'my_experiences', to: 'pages#my_experiences'
 
+  # Static pages
+  get 'host', to: 'pages#host'
+
 end
