@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-2">
+    <%= render "shared/onboarding_side_nav" %>
+  </div>
+  <div class="col-10">
+    <div class="onboarding-box">
+      <h1>Where can we contact you</h1>
+      <br>
+        <%= simple_form_for @experience do |f| %>
+          <%= f.error_notification %>
+          <h3>Where can your clients contact you:</h3>
+          <%= f.input :exp_phone, label: false, hint: "Use the international format +44 XXXX XXXXXX", class: "form-control" %>
+          <br>
+
+          <h3>Do you have a website to take bookings ?</h3>
+          <%= f.input :website, label: false, hint: "Example: https://www.treepr.co.uk", class: "form-control" %>
+          <br>
+
+
+          <%= f.submit "Save", class: "btn btn-flat" %>
+        <% end -%>
+
+    </div>
+  </div>
+</div>
