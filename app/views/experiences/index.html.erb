@@ -4,7 +4,9 @@
       <div class="cards">
         <% if @experiences.length > 0 %>
           <% @experiences.each do |experience| %>
-            <%= render 'shared/experience_card', experience: experience %>
+            <%= link_to experience_path(experience) do %>
+              <%= render 'shared/experience_card', experience: experience %>
+            <% end -%>
           <% end %>
         <% else %>
         <p>Sorry, we couldn't find any campsites that match your search. Please try again</p>
