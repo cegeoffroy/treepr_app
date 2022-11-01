@@ -1,5 +1,6 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def show
   end
@@ -31,7 +32,7 @@ class ExperiencesController < ApplicationController
     @experience.user = current_user
     if @experience.valid?
       @experience.save
-      redirect_to description_experience_path(@experience), notice: "New experience created !"
+      redirect_to overview_experience_path(@experience), notice: "New experience created !"
     else
       render :new, notice: "Oops, something went wrong while creating your experience."
     end
@@ -61,13 +62,13 @@ class ExperiencesController < ApplicationController
   def overview
   end
 
-  def listing
-  end
-
   def description
   end
 
-  def pricing
+  def settings
+  end
+
+  def contact
   end
 
   def photos_upload
@@ -75,6 +76,10 @@ class ExperiencesController < ApplicationController
 
 
   private
+
+  def to_submit?
+    !@accommodation.description.blank? && !@accommodation.price.blank? && !@accommodation.address.blank? ? true : false
+  end
 
   def set_experience
     @experience = Experience.find(params[:id])

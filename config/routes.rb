@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   resources :experiences do
     member do
       get 'overview'
-      get 'listing'
-      get 'pricing'
       get 'description'
+      get 'settings'
+      get 'contact'
       get 'photos_upload'
     end
   end

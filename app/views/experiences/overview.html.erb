@@ -1,68 +1,29 @@
-<div class="container content">
-  <div class="row d-flex justify-content-center p-3">
-    <div class="col-xs-12 w-100">
+<div class="row">
+  <div class="col-2">
+    <%= render "shared/onboarding_side_nav" %>
+  </div>
+  <div class="col-10">
+    <div class="onboarding-box">
+      <h1>Create your experience<span style="color: #E67E22">.</span></h1>
+      <div class="dropdown-divider orange"></div><br>
+      <br>
+        <%= simple_form_for @experience do |f| %>
+          <%= f.error_notification %>
+          <h3>Select the type of experience you offer</h3>
+          <%= f.input :exp_type, collection: [["Glamping", "Glamping"],["Bring Your Own tent", "Bring Your Own tent"],["Campsite", "Campsite"], ["RV Park", "RV Park"], ["Camping", "Camping"]], label: false, class: "form-control" %>
+          <br>
 
-      <div class="d-flex justify-content-between">
-        <h3><strong>Overview<span style="color: #E67E22">.</span></strong></h3>
-      </div>
-      <br>
-      <div class="d-flex justify-content-between sidebar-list overview-title">
-        <h4><%= @experience.name %> </h4>
-        <div>
-          <% if @experience.status == "Draft"%>
-            <span class="badge badge-pill badge-primary"><%= @experience.status %></span>
-          <% elsif @experience.status == "Pending" %>
-            <span class="badge badge-pill badge-warning"><%= @experience.status %></span>
-          <% elsif @experience.status == "Approved" %>
-            <span class="badge badge-pill badge-success"><%= @experience.status %></span>
-          <% elsif @experience.status == "Rejected" %>
-            <span class="badge badge-pill badge-danger"><%= @experience.status %></span>
-          <% end %>
-        </div>
-      </div>
-      <br>
-      <ul class="setup-overview">
-        <li class="sidebar-item">
-            <span class="float-right text-babu"><i class="fa-solid fa-circle-check"></i></span>
-            <%= link_to "Listing", listing_experience_path, class: "sidebar-link active" %>
-        </li>
-        <hr>
-        <li class="sidebar-item">
-          <% if !@experience.description.blank? %>
-            <i class="fa-solid fa-circle-check"></i>
-          <% else %>
-            <i class="fa-solid fa-circle-notch"></i>
-          <% end %>
-          <%= link_to "Description", description_experience_path, class: "sidebar-link active" %>
-        </li>
-        <hr>
-        <li class="sidebar-item">
-          <% if !@experience.price.blank? %>
-            <i class="fa-solid fa-circle-check"></i>
-          <% else %>
-            <i class="fa-solid fa-circle-notch"></i>
-          <% end %>
-          <%= link_to "Pricing", pricing_experience_path, class: "sidebar-link active" %>
-        </li>
-        <hr>
-      </ul>
-      <br>
-      <hr>
-      <div class="d-flex justify-content-between sidebar-list">
-        <strong><%= link_to '< Back', :back, class: "back" %></strong>
-        <div class="text-center">
-          <% is_ready = !@experience.description.blank? && !@experience.price.blank? && !@experience.address.blank? %>
-          <% if @experience.status == "Draft" %>
-            <%= form_for @experience do |f| %>
-              <%= f.hidden_field :status, { value: :Pending} %>
-              <%= f.submit "Publish", id: "publish_button", class: "btn btn-normal", disabled: !is_ready %>
-            <% end %>
-          <% elsif @experience.status == "Pending" %>
-            <div class="btn btn-ghost btn-block">Under Review</div>
-          <% end %>
+          <h3>What is your experience name</h3>
+          <%= f.text_field :name, label: "Experience Name", autocomplete: 'off', class: "form-control", hint:"Chose a vibrant name" %>
+          <br>
 
-        </div>
-      </div>
+          <h3>Where is your experience located</h3>
+
+          <%= f.input :address, placeholder: "Enter your precise address", hint: "Example: Nelson road, London, W1 1A0", class: "form-control" %>
+
+
+          <%= f.submit "Save", class: "btn btn-flat" %>
+        <% end -%>
 
     </div>
   </div>
