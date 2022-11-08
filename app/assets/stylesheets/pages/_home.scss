@@ -1,1 +1,56 @@
+.home-section {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
 
+.section-title {
+  border-bottom: 1px solid $orange
+}
+
+.feature-1-wrap {
+  position: relative; }
+
+.feature-1 {
+  padding: 30px;
+  background: rgba(26, 55, 77, 0.05);
+  border-radius: 20px;
+  min-height: calc(50% - 15px);
+  top: 0;
+  margin-bottom: 30px !important; }
+  @media (max-width: 991.98px) {
+    .feature-1 {
+      display: block !important; } }
+  .feature-1 h3 {
+    font-size: 1.2rem;
+    font-weight: 700; }
+
+.frame {
+  border-radius: 20px;
+  background-size: cover;
+}
+
+.feature-img-bg {
+  background-image: asset-url('hero-slider-1.jpg');
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.testimonial-section {
+  background: #f8f9fa;
+  padding-top: 5rem !important;
+  padding-bottom: 7rem !important; }
+
+
+
+@media (min-width: 500px) {
+  .home-section {
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+
+  .frame img{
+    height: 100px;
+    width: 74px;
+  }
+}

@@ -18,6 +18,13 @@ Rails.application.routes.draw do
   get 'my_experiences', to: 'pages#my_experiences'
 
   # Static pages
+  get 'about', to: 'pages#about'
+  get 'blog', to: 'pages#blog'
+  get 'career', to: 'pages#career'
+  get 'faq', to: 'pages#faq'
   get 'host', to: 'pages#host'
+  get 'standards', to: 'pages#standards'
+  get 'why_hosting', to: 'pages#why_hosting'
+  get 'account', to: 'pages#account'
 
 end
