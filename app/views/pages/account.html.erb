@@ -1,0 +1,59 @@
+<div class="container content">
+  <div class="row d-flex justify-content-center p-3">
+    <div class="col-xs-12 w-100">
+
+      <h3><strong>Account<span style="color: #E67E22">.</span></strong></h3>
+      <br>
+      <h3><%= @user.first_name + " " + @user.last_name %></h3>
+      <p><%= @user.email %>
+      </p>
+      <br>
+
+      <div class="container">
+          <div class="card-grid">
+            <div class="card-setting green myBox">
+              <%= link_to my_experiences_path(@user) do %>
+                <%= svg "icon-dashboard" %>
+                <h4 class="orange">Host Management Tools > </h4>
+                <p>Manage your campsites listing, your reservations & host calendars</p>
+              <% end %>
+            </div>
+            <div class="card-setting green myBox">
+              <%= link_to host_path do %>
+                <%= svg "icon-notification" %>
+                <h4 class="orange">Notifications > </h4>
+                <p>Choose notifications preferences</p>
+              <% end %>
+            </div>
+            <div class="card-setting green myBox">
+              <%= link_to host_path do %>
+                <%= svg "icon-payment" %>
+                <h4 class="orange">Payments & payouts > </h4>
+                <p>Manage your saved payment details and setup your hosting payouts</p>
+              <% end %>
+            </div>
+            <div class="card-setting green">
+              <%= svg "icon-referral" %>
+              <h4 class="orange">Invite your friends > </h4>
+              <p>Manage your campsites</p>
+              <span class="badge badge-pill badge-primary">Coming soon</span>
+            </div>
+          </div>
+      </div>
+      <br>
+
+      <div class="container">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-ghost" %>
+      </div>
+      <br>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  $(".myBox").click(function() {
+  window.location = $(this).find("a").attr("href");
+  return false;
+});
+</script>

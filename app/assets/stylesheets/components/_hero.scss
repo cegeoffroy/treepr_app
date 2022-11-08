@@ -1,14 +1,14 @@
 .bg-hero {
-    padding-top: 20px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2),
-                       rgba(0, 0, 0, 0.2)), asset-url('treepr_cover.jpg');
-    background-position: center;
-    background-size: cover;
-    background-color: $white;
-    height: 95vh;
-    opacity: 1;
-    min-height: 500px;
-  }
+  padding-top: 20px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2),
+                     rgba(0, 0, 0, 0.2)), asset-url('treepr_cover.jpg');
+  background-position: center;
+  background-size: cover;
+  background-color: $white;
+  height: 95vh;
+  opacity: 1;
+  min-height: 500px;
+}
 
 .hero-title {
   padding-top: 50px;
@@ -28,6 +28,12 @@
   padding: 24px;
 }
 
+.intro-wrap h1 a {
+  color: $orange;
+  border-bottom: 1px solid $green;
+}
+
+
 @media (min-width: 576px) {
   .bg-hero {
     position: relative;
@@ -45,9 +51,9 @@
 
   .hero-host {
   padding-left: 80px;
+  }
 }
 
-}
 
 @media (min-width: 992px) {
 
