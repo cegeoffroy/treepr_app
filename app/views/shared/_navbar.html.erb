@@ -12,9 +12,6 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Trips", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
             <%= link_to "Inbox", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
@@ -22,7 +19,7 @@
               <i class="fa-solid fa-campground"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Whishlist</a>
+              <%= link_to "Your profile", user_path(current_user), class: "dropdown-item" %>
               <% if current_user.experiences.any? %>
                 <a class="dropdown-item" href="/my_experiences">My Experiences</a>
               <% else %>

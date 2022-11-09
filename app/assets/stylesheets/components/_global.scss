@@ -33,6 +33,11 @@ a {
   border-top: 1px solid #E67E22;
 }
 
+.small-divider {
+  border-top: 3px solid #E67E22;
+  max-width: 50px;
+}
+
 body {
   text-decoration: none;
 }
@@ -44,6 +49,15 @@ body {
   margin: 0 auto;
   padding: 0;
   min-height: 80vh;
+  }
+
+  h4 {
+    font-weight: bold;
+    color: $green;
+  }
+
+  .left-panel {
+    padding: 25px 15px
   }
 
 }

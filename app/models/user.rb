@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
 has_many :experiences
 
+has_one_attached :avatar
+
 end
