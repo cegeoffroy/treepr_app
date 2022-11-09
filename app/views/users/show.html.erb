@@ -4,8 +4,17 @@
     <div class="col-12 col-md-4">
       <div class="left-panel">
         <div class="justify-content-center">
-          <div class="user-picture">
-            <%= image_tag avatar_for(@user), class: 'avatar-Xlarge' %>
+          <div class="user-picture-container">
+            <div>
+              <% if @user.avatar.attached? %>
+                <%= cl_image_tag @user.avatar.key, :transformation=>[
+                  {:aspect_ratio=>"1.0", :width=>150, :crop=>"fill"},
+                  {:radius=>"max"}
+                  ] %>
+                <% else %>
+                <%= image_tag avatar_for(@user), class: 'avatar-Xlarge' %>
+              <% end %>
+            </div>
           </div>
           <div class="user-summary">
             <h2><%= @user.first_name %> <%= @user.last_name %></h2>
