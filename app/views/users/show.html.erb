@@ -1,0 +1,71 @@
+<div class="container content">
+  <div class="row d-flex justify-content-center">
+
+    <div class="col-12 col-md-4">
+      <div class="left-panel">
+        <div class="justify-content-center">
+          <div class="user-picture-container">
+            <div>
+              <% if @user.avatar.attached? %>
+                <%= cl_image_tag @user.avatar.key, :transformation=>[
+                  {:aspect_ratio=>"1.0", :width=>150, :crop=>"fill"},
+                  {:radius=>"max"}
+                  ] %>
+                <% else %>
+                <%= image_tag avatar_for(@user), class: 'avatar-Xlarge' %>
+              <% end %>
+            </div>
+          </div>
+          <div class="user-summary">
+            <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+          </div>
+        </div>
+        <% if @user == current_user %>
+          <h4><u><%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-ghost w-100"%></u></h4>
+        <% end %>
+
+        <br>
+        <div class="small-divider"></div>
+        <br>
+
+        <div class="verification-container">
+          <h4>Confirmation</h4>
+          <ul class="sidebar-list">
+            <% if @user.email %>
+              <li><i class="far fa-check-circle text-babu"></i>
+            Email address</li>
+            <% end %>
+
+            <li><i class="far fa-circle"></i>
+            Good Camper Chart Signed</li>
+            <li><i class="far fa-circle"></i>
+            Nice Host Chart Signed</li>
+          </ul>
+          <br>
+          <% if current_user && current_user != @user %>
+            <%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post, class: "btn btn-default" %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-12 col-md-8">
+
+      <div class="description row-space-3">
+        <h4>Who are you</h4>
+        <% if @user.description? %>
+          <p><%= @user.description %></p>
+        <% else %>
+          <p>Describe yourself to the community</p>
+        <% end %>
+      </div>
+
+      <br>
+      <div class="small-divider"></div>
+      <br>
+
+    </div>
+  </div>
+</div>
+

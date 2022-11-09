@@ -33,17 +33,48 @@ a {
   border-top: 1px solid #E67E22;
 }
 
+.small-divider {
+  border-top: 3px solid #E67E22;
+  max-width: 50px;
+}
+
 body {
   text-decoration: none;
 }
-
-@media (min-width: 576px) {
 
 .content {
   max-width: 1250px;
   margin: 0 auto;
   padding: 0;
   min-height: 80vh;
+}
+
+.box-centered {
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+.box {
+  padding: 15px 25px;
+  border-radius: 20px;
+  border: 1px solid $light-gray;
+}
+
+.right-signup {
+
+}
+
+@media (min-width: 576px) {
+
+
+
+  h4 {
+    font-weight: bold;
+    color: $green;
+  }
+
+  .left-panel {
+    padding: 25px 15px
   }
 
 }
