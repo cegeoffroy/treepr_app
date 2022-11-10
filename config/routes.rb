@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get 'description'
       get 'settings'
       get 'contact'
-      get 'photos_upload'
+      get 'photos'
     end
   end
 

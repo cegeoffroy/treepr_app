@@ -54,8 +54,8 @@ class ExperiencesController < ApplicationController
 
   def destroy
     @experience.destroy
-    flash[:notice] = "Listing deleted"
-    redirect_to experiences_path, status: :see_other
+    flash[:notice] = "Your experience has been deleted"
+    redirect_to my_experiences_path, status: :see_other
 
   end
 
@@ -71,7 +71,7 @@ class ExperiencesController < ApplicationController
   def contact
   end
 
-  def photos_upload
+  def photos
   end
 
 
@@ -96,6 +96,7 @@ class ExperiencesController < ApplicationController
                                         :status,
                                         :latitude,
                                         :longitude,
+                                        :cover,
                                         photos: [])
   end
 end
