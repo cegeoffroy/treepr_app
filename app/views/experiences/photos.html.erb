@@ -4,32 +4,86 @@
     <%= render "shared/onboarding_side_nav" %>
   </div>
   <div class="col-10">
-    <div class="onboarding-box">
-      <h1>Upload your pictures<span style="color: #E67E22">.</span></h1>
+    <div class="onboarding-box mb-5">
+      <h1>Add your pictures<span style="color: #E67E22">.</span></h1>
       <div class="dropdown-divider orange"></div><br>
       <br>
 
-      <h4>Choose your cover pitcture</h4>
-      <%= simple_form_for @experience do |f| %>
-        <%= f.input :cover, as: :file %>
-          <div class="text-center">
-            <%= f.button :submit, 'Add cover', class: "btn-flat" %>
-          </div>
-      <% end %>
+      <h4><span style="color: #E67E22">1</span> - Choose your cover picture</h4>
+      <p>Select a good quality image that is the most representative of your experience. <br>
+        Don't forget: <em>You never get a second chance to make a first impression.</em>
+      </p>
+      <i class="fa-solid fa-circle-1"></i>
+
       <% if @experience.cover.attached? %>
+        <div class="box-upload">
           <%= cl_image_tag @experience.cover.key, :transformation=>[
             {:aspect_ratio=>"1.0", :width=>250, :crop=>"fill"}
             ], class: "images-bordered" %>
+        </div>
           <% else %>
+        <div class="box-upload-empty">
+          <span>
+          <i class="fa-solid fa-cloud-arrow-up"></i>
           <p>No cover uploaded</p>
-        <% end %>
-      <h4>Choose your cover pitcture</h4>
+          </span>
+        </div>
+      <% end %>
+      <br>
+
       <%= simple_form_for @experience do |f| %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.input :cover, as: :file, label: false %>
           <div class="text-center">
-            <%= f.button :submit, 'Add photos', class: "btn-flat" %>
+            <%= f.button :submit, 'Upload cover', class: "btn-flat" %>
           </div>
       <% end %>
+
+      <br>
+      <div class="small-divider"></div>
+      <br>
+
+      <h4><span style="color: #E67E22">2</span> - Choose your other pictures</h4>
+      <p>Upload additional pictures of your experience.</p>
+      <ul>
+        <li>A variety of details and angles, including photos of people in action</li>
+        <li>Candid moments that accurately illustrate the experience</li>
+        <li>Good image quality – no heavy filters, distortions, overlaid text, or watermarks</li>
+      </ul>
+
+      <% if !@experience.cover.nil? %>
+        <% if @photos.count > 0 %>
+          <br>
+          <br>
+          <div class="container">
+              <% @photos.each do |preview| %>
+                <%= cl_image_tag preview.key, :transformation=>[
+                  {:aspect_ratio=>"1.0", :width=>150, :crop=>"fill"}
+                  ], class: "images-bordered" %>
+              <% end %>
+          </div>
+          <% else %>
+            <div class="box-upload-empty">
+              <span>
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <p>No cover uploaded</p>
+              </span>
+            </div>
+        <% end -%>
+        <br>
+        <%= simple_form_for @experience do |f| %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false %>
+            <div class="text-center">
+              <%= f.button :submit, 'Upload photos', class: "btn-flat" %>
+            </div>
+        <% end %>
+      <% else %>
+        <div class="box-upload-empty">
+          <span>
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <p>Please upload a cover</p>
+          </span>
+        </div>
+      <% end -%>
     </div>
   </div>
 </div>

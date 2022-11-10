@@ -10,6 +10,7 @@
 
 .btn-ghost:hover {
   opacity: 1;
+  color: $orange;
 }
 
 .btn-flat {
@@ -21,8 +22,8 @@
 }
 
 .btn-flat:hover {
-  background: white;
-  color: orange;
+  opacity: 0.7;
+  color: $white;
 }
 
 .btn-gradient {
