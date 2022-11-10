@@ -1,3 +1,8 @@
+body {
+  text-decoration: none;
+}
+
+
 h1 {
   font-weight: bold;
   color: $green;
@@ -38,9 +43,6 @@ a {
   max-width: 50px;
 }
 
-body {
-  text-decoration: none;
-}
 
 .content {
   max-width: 1250px;
@@ -49,24 +51,8 @@ body {
   min-height: 80vh;
 }
 
-.box-centered {
-  margin: 0 auto;
-  max-width: 350px;
-}
-
-.box {
-  padding: 15px 25px;
-  border-radius: 20px;
-  border: 1px solid $light-gray;
-}
-
-.right-signup {
-
-}
 
 @media (min-width: 576px) {
-
-
 
   h4 {
     font-weight: bold;

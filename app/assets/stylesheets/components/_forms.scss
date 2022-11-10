@@ -2,3 +2,38 @@
   margin: 0 auto;
   justify-content: center;
 }
+
+.box-centered {
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+.box {
+  padding: 15px 25px;
+  border-radius: 20px;
+  border: 1px solid $light-gray;
+}
+
+.box-upload {
+  display: flex;
+  padding: 15px 25px;
+  border-radius: 20px;
+  border: 1px dotted $orange;
+  text-align: center;
+  min-height: 250px;
+  color: $gray;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-upload-empty {
+  display: flex;
+  padding: 15px 25px;
+  border-radius: 20px;
+  border: 1px dotted $orange;
+  text-align: center;
+  min-height: 250px;
+  color: $gray;
+  align-items: center;
+  justify-content: center;
+}

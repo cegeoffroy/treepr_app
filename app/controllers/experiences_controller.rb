@@ -56,7 +56,6 @@ class ExperiencesController < ApplicationController
     @experience.destroy
     flash[:notice] = "Your experience has been deleted"
     redirect_to my_experiences_path, status: :see_other
-
   end
 
   def overview
@@ -72,6 +71,13 @@ class ExperiencesController < ApplicationController
   end
 
   def photos
+    @photos = @experience.photos
+  end
+
+  def delete_cover_attachment
+    @cover_url = ActiveStorage::Attachment.find(params[:id])
+    @cover_url.purge
+    redirect_back(fallback_location: request.referer)
   end
 
 

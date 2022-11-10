@@ -1,5 +1,9 @@
 <div class="container">
-  <h1><strong>My Listings<span style="color: #E67E22">.</span></strong></h1>
+  <div class="d-flex justify-content-between">
+    <h1><strong>My Listings<span style="color: #E67E22">.</span></strong></h1>
+    <%= link_to "Host", new_experience_path, class: "btn btn-flat" %>
+  </div>
+
   <br>
     <% if @experiences.any? %>
         <% @experiences.each do |experience| %>
