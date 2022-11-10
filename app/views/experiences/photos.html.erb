@@ -1,0 +1,35 @@
+
+<div class="row">
+  <div class="col-2">
+    <%= render "shared/onboarding_side_nav" %>
+  </div>
+  <div class="col-10">
+    <div class="onboarding-box">
+      <h1>Upload your pictures<span style="color: #E67E22">.</span></h1>
+      <div class="dropdown-divider orange"></div><br>
+      <br>
+
+      <h4>Choose your cover pitcture</h4>
+      <%= simple_form_for @experience do |f| %>
+        <%= f.input :cover, as: :file %>
+          <div class="text-center">
+            <%= f.button :submit, 'Add cover', class: "btn-flat" %>
+          </div>
+      <% end %>
+      <% if @experience.cover.attached? %>
+          <%= cl_image_tag @experience.cover.key, :transformation=>[
+            {:aspect_ratio=>"1.0", :width=>250, :crop=>"fill"}
+            ], class: "images-bordered" %>
+          <% else %>
+          <p>No cover uploaded</p>
+        <% end %>
+      <h4>Choose your cover pitcture</h4>
+      <%= simple_form_for @experience do |f| %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <div class="text-center">
+            <%= f.button :submit, 'Add photos', class: "btn-flat" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

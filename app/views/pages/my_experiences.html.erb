@@ -3,20 +3,21 @@
   <br>
     <% if @experiences.any? %>
         <% @experiences.each do |experience| %>
-          <div class="notification">
-            <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+          <div class="notification-header">
+
             <div class="notification-content">
-              <p><%= experience.name %></p>
-              <p><small><%= experience.address %></small></p>
+              <p class="badge-progress">in progress</p>
+              <h4><%= experience.name %></h4>
+              <p><%= experience.address %></p>
             </div>
 
-            <div class="notification-actions">
-              <a href="<%= overview_experience_path(experience) %>">Show <i class="fa-solid fa-eye"></i></a>
-              <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-              <%= button_to experience_path(experience) do %>
-                <p>Delete <i class="far fa-trash-alt"></i></p>
-              <% end -%>
-            </div>
+          </div>
+          <div class="notification-footer">
+            <a href="<%= overview_experience_path(experience) %>">Show <i class="fa-solid fa-eye"></i></a>
+            <%= link_to "Delete",
+              experience_path(experience),
+              data: {"turbo_method": :delete, turbo_confirm: "Are you sure?"}
+            %>
           </div>
           <br>
 
