@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'blog', to: 'pages#blog'
   get 'career', to: 'pages#career'
+  get 'credits', to: 'pages#credits'
   get 'faq', to: 'pages#faq'
   get 'host', to: 'pages#host'
   get 'standards', to: 'pages#standards'

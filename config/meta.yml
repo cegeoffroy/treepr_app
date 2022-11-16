@@ -1,0 +1,5 @@
+meta_product_name: "Treepr"
+meta_title: "🏕️ Treepr | Book Unique Outdoor Experiences"
+meta_description: "Find unique local activities and book outdoor experiences and stay across the UK."
+meta_image: "treepr_cover.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

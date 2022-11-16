@@ -2,22 +2,16 @@
 <header class="home bg-hero">
   <div class="container">
 
-    <div class="hero-title">
-      <h1>Live your next <span style="color: #0E343A">ADVENTURE</span> outdoor<span style="color: #E67E22">.</span></h1>
+    <div class="hero-title text-center">
+      <h1>Live your next adventure <span style="color: #0E343A">Outdoor</span><span style="color: #E67E22">.</span></h1>
+      <p>
+      Search, discover and enjoy all kind of unique outdoor experiences from a single platform<br>
+      From experiencing outdoor stays to daily activites <br>
+      Spend less time searching, more time enjoying outdoor adventures<span style="color: #E67E22">.</span>
+      </p>
     </div>
-    <div class="hero-text">
-      <p>Your next Treepr adventure starts here.<br>
-      Discover, book and enjoy unique outdoor activites around you, from glamping to outdoor experiences, </p>
-    </div>
+
     <div class="col-xs-12 w-100">
-     <!--  <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-        <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-          <button name="button" type="submit" class="btn btn-flat">
-            <i class="fas fa-search"></i> Search
-          </button>
-        </div>
-      </form> -->
 
       <%= form_with url: experiences_path, method: :get, class: "search-form-control d-flex" do %>
         <%= text_field_tag :query,
@@ -89,5 +83,58 @@
       </div>
   </div>
 </div>
+
+
+<section class="border-top" id="defaultProcess">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-6">
+      <div class="col-lg-6">
+        <h2 class="fs-3 fs-sm-4 text-decoration-underline mb-3">our process</h2>
+        <p class="text-500 fst-italic">Our process is a flexible framework that adapts, evolves and responds to your needs. It is the streamlined result of two decades of website design and marketing for hundreds of clients.</p>
+        <hr class="hr-short mt-5">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 ps-lg-7">
+        <div class="row align-items-end">
+          <div class="col-lg-6 order-lg-2 text-center"><img class="img-fluid" src="../assets/img/illustration/process-01.svg" alt="" width="400"></div>
+          <div class="col-lg-6 border-lg-start border-lg-bottom pb-lg-8 mt-4 mt-lg-0 mb-8 mb-lg-0">
+            <div class="process-item ms-6 ms-sm-8 ms-lg-6"><span class="process-item-number">01</span>
+              <h3>plan</h3>
+              <p>We set priorities, organize content, and understand the buyer’s journey that your audience takes as they navigate your website. At the end of strategy, you will have a Blueprint for your website project, a comprehensive strategic plan for your website design, content, and functionality.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 border-lg-end border-lg-bottom text-center py-lg-8"><img class="img-fluid" src="../assets/img/illustration/process-02.svg" alt="" width="400"></div>
+          <div class="col-lg-6 mt-4 mb-8 my-lg-8">
+            <div class="process-item ms-6 ms-sm-8 ms-lg-6"><span class="process-item-number">02</span>
+              <h3>design</h3>
+              <p>Once the Blueprint is approved, we create wireframes and a design comp for your review. This process involves various reviews, approvals, and close communication between you and our creative team. We begin with the Homepage to set style, image and branding standards, then move toward interior layouts.</p><a class="btn btn-outline-dark btn-sm mt-3" href="#!">View Methods</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 order-lg-2 text-center align-self-center"><img class="img-fluid" src="../assets/img/illustration/process-03.svg" alt="" width="400"></div>
+          <div class="col-lg-6 border-lg-start border-lg-bottom py-lg-8 mt-4 mt-lg-0 mb-8 mb-lg-0">
+            <div class="process-item ms-6 ms-sm-8 ms-lg-6"><span class="process-item-number">03</span>
+              <h3>develop</h3>
+              <p>With the blueprint &amp; design comps as our guide, the development team begins to create your website with the state of the earth tools. Our entire team works to add content, final design elements, review, &amp; test your website for quality.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row pb-1">
+          <div class="col-lg-6 border-lg-end text-center py-lg-8"><img class="img-fluid" src="../assets/img/illustration/process-04.svg" alt="" width="400"></div>
+          <div class="col-lg-6 align-self-center mt-4 mt-lg-0 mt-lg-8">
+            <div class="process-item process-item-last ms-6 ms-sm-8 ms-lg-6"><span class="process-item-number">04</span>
+              <h3>deploy</h3>
+              <p>After testing and review, we present your new website. Upon your approval, your website will be launched, promoted and optimized for search engines such as Google &amp; Bing.</p><a class="btn btn-outline-dark btn-sm mt-3" href="../pages/portfolio.html">See portfolio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end of .container-->
+</section>
 
 
