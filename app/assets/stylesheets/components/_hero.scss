@@ -12,16 +12,13 @@
 
 .hero-title {
   padding-top: 50px;
-  font-size: 4.8rem;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  h1 {
-    color: $white;
-  }
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  color: $white;
 }
 
 .hero-text {
   color: $white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
 
 .hero-host {
@@ -30,8 +27,13 @@
 
 .intro-wrap h1 a {
   color: $orange;
-  border-bottom: 1px solid $green;
 }
+
+.host-right img {
+    height: 300px;
+    margin-top: 40px;
+    border-radius: 20px;
+  }
 
 
 @media (min-width: 576px) {
@@ -43,6 +45,7 @@
     padding-top: 50px;
     padding-left: 15px;
     padding-right: 15px;
+    margin-bottom: 100px;
   }
 
   .hero-text {
@@ -52,6 +55,11 @@
   .hero-host {
   padding-left: 80px;
   }
+
+  .host-right img {
+    height: 450px;
+    margin: 10px;
+  }
 }
 
 
@@ -60,7 +68,10 @@
   .hero-title {
     padding-top: 100px;
     h1 {
-      color: $white;
+      margin-bottom: 25px;
+    }
+    p {
+      font-size: 22px;
     }
   }
 
@@ -107,5 +118,10 @@
     border: 1px solid $orange;
     outline: none !important;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+
+  .host-right img {
+    height: 650px;
+    margin: 10px;
   }
 }

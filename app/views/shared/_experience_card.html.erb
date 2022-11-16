@@ -1,5 +1,6 @@
 <div class="card-experience">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+   <%= cl_image_tag experience.cover.key, :transformation=>[
+                {:width=>750, :crop=>"fit"}] %>
   <div class="card-experience-infos">
     <div>
       <h2><%= experience.name %></h2>

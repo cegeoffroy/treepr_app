@@ -5,7 +5,7 @@
     <div class="col-12 col-md-4">
 
       <div class="expbox center sticky-top">
-        <img class="avatar-Xlarge" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+        <%= image_tag avatar_for(@experience.user), class: "avatar-Xlarge" %>
         <h2>Hosted by John</h2>
         <p>Hiking in Faversham</p>
         <div class="dble-btn">
@@ -73,14 +73,18 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg" class="d-block w-100" alt="...">
+              <%= cl_image_tag @experience.cover.key, :transformation=>[
+                {:width=>450, :crop=>"fill"}] %>
             </div>
-            <div class="carousel-item">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" class="d-block w-100" alt="...">
-            </div>
+            <% if @experience.photos.count > 0 %>
+              <div class="carousel-item">
+                <% @experience.photos.each do |preview| %>
+                  <%= cl_image_tag preview.key, :transformation=>[
+                    {:aspect_ratio=>"1.0", :width=>450, :crop=>"fill"}
+                    ], class: "images-bordered" %>
+                <% end %>
+              </div>
+            <% end -%>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -33,14 +33,14 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item active">
-            <%= link_to "Host", host_path, class: "btn btn-flat" %>
-          </li>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Host", host_path, class: "btn btn-flat" %>
           </li>
         <% end %>
       </ul>
